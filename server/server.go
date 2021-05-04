@@ -29,9 +29,9 @@ func (s *SalahApi) Start(port string) {
 	}
 
 	s.e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "hello from prayer server")
+		return c.String(http.StatusOK, "Prayer Server running")
 	})
-	s.e.GET("/all", controller.GetPrayerTime)
+	//s.e.GET("/all", controller.GetPrayerTime)
 	s.e.POST("/prayertime", controller.GetPrayerTimePOST)
 
 	s.e.Logger.Fatal(s.e.Start(port))

@@ -1,4 +1,4 @@
-module github.com/CapregSoft
+module github.com/CapregSoft/prayer-api
 
 go 1.16
 
