@@ -17,8 +17,18 @@ func GetPrayerTimePOST(c echo.Context) error {
 	if err := c.Bind(req); err != nil {
 		c.JSON(http.StatusBadRequest, map[string]string{"error": "internal server error"})
 	}
-	fmt.Println(req.Date)
-	return c.JSON(http.StatusOK, req) //map[string]string{"OK": "success"})
+	c.Logger().Info(req)
+	p := prayers.New()
+	const (
+		layoutISO = "2006-01-02"
+	)
+
+	t, _ := time.Parse(layoutISO, req.Date)
+	year, month, day := t.Date()
+	prayerData := p.GetPrayerTimesAsObject(year, int(month), day, req.Latitude, req.Longitude, req.TimeZone)
+
+	//fmt.Println(req.Date)
+	return c.JSON(http.StatusOK, prayerData) //map[string]string{"OK": "success"})
 
 }
 func GetPrayerTime(c echo.Context) error {

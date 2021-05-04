@@ -1,4 +1,4 @@
-package prayerapi
+package server
 
 import (
 	"net/http"
@@ -11,7 +11,7 @@ type SalahApi struct {
 	e *echo.Echo
 }
 
-func NewSalahApi() *SalahApi {
+func New() *SalahApi {
 
 	return &SalahApi{
 		e: echo.New(),
