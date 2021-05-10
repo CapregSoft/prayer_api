@@ -29,7 +29,7 @@ func (s *SalahApi) Start(port string) {
 	}
 
 	s.e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Prayer Server running")
+		return c.String(http.StatusOK, "Welcome to prayer time service")
 	})
 	//s.e.GET("/all", controller.GetPrayerTime)
 	s.e.POST("/prayertime", controller.GetPrayerTimePOST)
