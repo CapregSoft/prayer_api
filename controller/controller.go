@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/CapregSoft/go-prayer-time/prayers"
-	"github.com/CapregSoft/prayer-api/model"
+	"github.com/CapregSoft/prayer_api/model"
 	"github.com/labstack/echo/v4"
 )
 
