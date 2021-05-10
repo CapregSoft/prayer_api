@@ -3,7 +3,7 @@ package server
 import (
 	"net/http"
 
-	"github.com/CapregSoft/prayer-api/controller"
+	"github.com/CapregSoft/prayer_api/controller"
 	"github.com/labstack/echo/v4"
 )
 
