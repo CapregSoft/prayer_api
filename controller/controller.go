@@ -84,7 +84,7 @@ func GetPrayerTime(c echo.Context) error {
 	if err := c.Bind(req); err != nil {
 		c.JSON(http.StatusBadRequest, map[string]string{"error": "internal server error"})
 	}
-	fmt.Println(req)
+
 	p := prayers.New()
 	const (
 		layoutISO = "2006-01-02"
